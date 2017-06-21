@@ -4,7 +4,6 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
@@ -12,8 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.shellcore.android.flashstudy.R;
+import com.shellcore.android.flashstudy.dao.QuestionDao;
 import com.shellcore.android.flashstudy.model.Question;
-import com.shellcore.android.flashstudy.service.QuestionListService;
 
 /**
  * Created by Cesar on 21/06/2017.
@@ -58,17 +57,12 @@ public class AddQuestionDialogFragment extends DialogFragment {
         return builder.create();
     }
 
-    @Override
-    public void onDestroy() {
-        listener.handleResult();
-        super.onDestroy();
-    }
-
     private void saveQuestion(String quest, String answer) {
         Question question =  new Question(quest, answer);
-        Intent intent = new Intent(getContext(), QuestionListService.class);
-        intent.putExtra(QuestionListService.QUESTION, question);
-        getActivity().startService(intent);
+        int id = QuestionDao.insertQuestion(getContext(), question);
+        if (id != 0) {
+            listener.handleResult();
+        }
     }
 
     public void setListener(ToggleAddQuestionListener listener) {

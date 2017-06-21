@@ -1,26 +1,17 @@
 package com.shellcore.android.flashstudy;
 
-import android.app.LoaderManager;
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.shellcore.android.flashstudy.adapter.QuestionListAdapter;
-import com.shellcore.android.flashstudy.data.QuestionContract;
-import com.shellcore.android.flashstudy.data.QuestionContract.QuestionEntry;
+import com.shellcore.android.flashstudy.dao.QuestionDao;
 import com.shellcore.android.flashstudy.dialog.AddQuestionDialogFragment;
 import com.shellcore.android.flashstudy.model.Question;
-import com.shellcore.android.flashstudy.service.QuestionListService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +59,7 @@ public class MainActivity extends AppCompatActivity implements AddQuestionDialog
 
     private void loadQuestionsForDB() {
         questions.clear();
-        questions.addAll(new QuestionListService().getQuestionList(this));
+        questions.addAll(QuestionDao.getQuestionList(this));
         adapter.notifyDataSetChanged();
     }
 
