@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/colorCard"
+    android:padding="@dimen/standar_margin"
+    android:layout_margin="@dimen/standar_margin">
+
+    <TextView
+        android:gravity="center"
+        android:layout_margin="@dimen/standar_margin"
+        android:id="@+id/txt_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Question"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</android.support.v7.widget.CardView>
