@@ -1,5 +1,8 @@
 package com.shellcore.android.flashstudy.model;
 
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
 
 /**
@@ -9,7 +12,11 @@ import java.io.Serializable;
 public class Question implements Serializable {
 
     private int id;
+
+    @SerializedName("question")
     private String question;
+
+    @SerializedName("answer")
     private String answer;
 
     public Question() {

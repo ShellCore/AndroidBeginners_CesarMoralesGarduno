@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements AddQuestionDialogFragment.ToggleAddQuestionListener {
+public class MainActivity extends AppCompatActivity implements AddQuestionDialogFragment.ToggleAddQuestionListener, LoadQuestionTask.ToggleLoadQuestionListener {
 
     // Servicios
     private QuestionListAdapter adapter;
@@ -54,7 +54,13 @@ public class MainActivity extends AppCompatActivity implements AddQuestionDialog
         questions = new ArrayList<>();
         adapter = new QuestionListAdapter(this, questions);
 
-        loadQuestionsForDB();
+        loadQuestionsForJson();
+//        loadQuestionsForDB();
+    }
+
+    private void loadQuestionsForJson() {
+        LoadQuestionTask task = new LoadQuestionTask(this, this);
+        task.execute("questionlist.json");
     }
 
     private void loadQuestionsForDB() {
@@ -94,6 +100,12 @@ public class MainActivity extends AppCompatActivity implements AddQuestionDialog
 
     @Override
     public void handleResult() {
+        loadQuestionsForDB();
+    }
+
+    @Override
+    public void handleLoadQuestionTaskResult(List<Question> questions) {
+        QuestionDao.insertAllQuestions(this, questions);
         loadQuestionsForDB();
     }
 }

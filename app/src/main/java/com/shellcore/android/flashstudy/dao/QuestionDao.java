@@ -23,6 +23,13 @@ public class QuestionDao {
 
     private static SQLiteOpenHelper dbHelper;
 
+    public static void insertAllQuestions(Context context, List<Question> questions) {
+        for (Question question :
+                questions) {
+            insertQuestion(context, question);
+        }
+    }
+
     public static int insertQuestion(Context context, Question question) {
         dbHelper = new FlashStudyDBHelper(context);
         final SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -52,7 +59,7 @@ public class QuestionDao {
     }
 
     public static int delete(Context context, int id) {
-        String[] ids = new String[] {Integer.toString(id)};
+        String[] ids = new String[]{Integer.toString(id)};
         dbHelper = new FlashStudyDBHelper(context);
         final SQLiteDatabase db = dbHelper.getWritableDatabase();
         int res = db.delete(QuestionEntry.TABLE_NAME, "_ID?", ids);

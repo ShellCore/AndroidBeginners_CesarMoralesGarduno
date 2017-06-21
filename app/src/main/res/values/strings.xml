@@ -5,4 +5,5 @@
     <string name="dialog.hint.add_question">Pregunta</string>
     <string name="dialog.hint.answer">Respuesta</string>
     <string name="dialog.title">Agregar nueva pregunta</string>
+    <string name="processDialog_wait">Leyendo datos del archivo json...</string>
 </resources>
