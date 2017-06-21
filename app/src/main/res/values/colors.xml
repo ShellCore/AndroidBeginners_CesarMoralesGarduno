@@ -2,9 +2,11 @@
 <resources>
     <color name="colorPrimary">#76C2AF</color>
     <color name="colorPrimaryDark">#499f8a</color>
-    <color name="colorAccent">#F5CF87</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBackground">#DDD</color>
 
-    <color name="colorCard">#FF4CA4BF</color>
-    <color name="colorCardQuestion">#BBBAAE</color>
-    <color name="colorCardAnswer">#E0E0D1</color>
+    <color name="colorCard">@android:color/white</color>
+
+    <color name="colorCardQuestion">#FF4081</color>
+    <color name="colorCardAnswer">@android:color/white</color>
 </resources>

@@ -1,5 +1,9 @@
 package com.shellcore.android.flashstudy;
 
+import android.app.LoaderManager;
+import android.content.CursorLoader;
+import android.content.Loader;
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,15 +16,20 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.shellcore.android.flashstudy.adapter.QuestionListAdapter;
+import com.shellcore.android.flashstudy.data.QuestionContract;
+import com.shellcore.android.flashstudy.data.QuestionContract.QuestionEntry;
+import com.shellcore.android.flashstudy.dialog.AddQuestionDialogFragment;
 import com.shellcore.android.flashstudy.model.Question;
+import com.shellcore.android.flashstudy.service.QuestionListService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AddQuestionDialogFragment.ToggleAddQuestionListener {
 
     // Servicios
     private QuestionListAdapter adapter;
@@ -44,15 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         initializeData();
         setupRecyclerView();
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     private void initializeData() {
@@ -61,14 +61,18 @@ public class MainActivity extends AppCompatActivity {
          * se deberá leer desde el archivo Json.
          */
         questions = new ArrayList<>();
+        adapter = new QuestionListAdapter(this, questions);
 
-        // TODO Hardcoded
-        questions.add(new Question("¿Cuanto es 2 + 2 en R4?", "Puede ser 2, pero depende del teseracto"));
+        loadQuestionsForDB();
+    }
+
+    private void loadQuestionsForDB() {
+        questions.clear();
+        questions.addAll(new QuestionListService().getQuestionList(this));
+        adapter.notifyDataSetChanged();
     }
 
     private void setupRecyclerView() {
-        adapter = new QuestionListAdapter(this, questions);
-
         recCardList.setLayoutManager(new LinearLayoutManager(this));
         recCardList.setHasFixedSize(true);
         recCardList.setAdapter(adapter);
@@ -86,7 +90,19 @@ public class MainActivity extends AppCompatActivity {
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
+    }
+
+
+    @OnClick(R.id.fab)
+    public void addQuestion() {
+        AddQuestionDialogFragment dialog = new AddQuestionDialogFragment();
+        dialog.setListener(this);
+        dialog.show(getSupportFragmentManager(), "addQuestion");
+    }
+
+    @Override
+    public void handleResult() {
+        loadQuestionsForDB();
     }
 }

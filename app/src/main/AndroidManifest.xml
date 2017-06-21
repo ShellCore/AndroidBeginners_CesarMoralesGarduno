@@ -28,6 +28,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.shellcore.android.flashstudy.MainActivity" />
         </activity>
+
+        <provider
+            android:name=".data.QuestionProvider"
+            android:authorities="com.shellcore.android.flashstudy"
+            android:exported="false" />
+
+        <service
+            android:name=".service.QuestionListService"
+            android:exported="false" />
     </application>
 
 </manifest>

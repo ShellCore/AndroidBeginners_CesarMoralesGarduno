@@ -2,4 +2,7 @@
     <string name="app_name">Flash Study</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_question_detail">QuestionDetailActivity</string>
+    <string name="dialog.hint.add_question">Pregunta</string>
+    <string name="dialog.hint.answer">Respuesta</string>
+    <string name="dialog.title">Agregar nueva pregunta</string>
 </resources>

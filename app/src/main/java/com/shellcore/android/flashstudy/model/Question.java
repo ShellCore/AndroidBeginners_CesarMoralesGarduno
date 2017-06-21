@@ -8,12 +8,24 @@ import java.io.Serializable;
 
 public class Question implements Serializable {
 
+    private int id;
     private String question;
     private String answer;
+
+    public Question() {
+    }
 
     public Question(String question, String answer) {
         this.question = question;
         this.answer = answer;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getQuestion() {
