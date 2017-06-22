@@ -35,14 +35,14 @@ Cuando te estás preparando oara un examen, una técnica común para estudiar es
 
 **Flash Study** es el proyecto final para entregar como parte de los requerimientos del curso [Android Development for Beginners](https://courses.edx.org/courses/course-v1:GalileoX+CAAD002X+1T2017/info) de la plataforma educativa [edX](https://www.edx.org/).
 
-[logo]: https://github.com/ShellCore/FlashStudy/raw/master/app/src/main/res/mipmap-mdpi/ic_launcher.png "Flash Study App Logo"
+[logo]: https://raw.githubusercontent.com/ShellCore/AndroidBeginners_CesarMoralesGarduno/master/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png "Flash Study App Logo"
 
-[main_activity]: https://github.com/ShellCore/FlashStudy/raw/master/readmeFiles/main_activity.png "Main Activity"
+[main_activity]: https://raw.githubusercontent.com/ShellCore/AndroidBeginners_CesarMoralesGarduno/master/readmeFiles/main_activity.png "Main Activity"
 
-[detail_activity]: https://github.com/ShellCore/FlashStudy/raw/master/readmeFiles/detail.png "Detail Activity"
+[detail_activity]: https://raw.githubusercontent.com/ShellCore/AndroidBeginners_CesarMoralesGarduno/master/readmeFiles/detail.png "Detail Activity"
 
-[dialog]: https://github.com/ShellCore/FlashStudy/raw/master/readmeFiles/dialog.png "Dialog Activity"
+[dialog]: https://raw.githubusercontent.com/ShellCore/AndroidBeginners_CesarMoralesGarduno/master/readmeFiles/dialog.png "Dialog Activity"
 
-[settings]: https://github.com/ShellCore/FlashStudy/raw/master/readmeFiles/settings.png "Settings Activity"
+[settings]: https://raw.githubusercontent.com/ShellCore/AndroidBeginners_CesarMoralesGarduno/master/readmeFiles/settings.png "Settings Activity"
 
-[widget]: https://github.com/ShellCore/FlashStudy/raw/master/readmeFiles/widget.png "Widget Activity"
+[widget]: https://raw.githubusercontent.com/ShellCore/AndroidBeginners_CesarMoralesGarduno/master/readmeFiles/widget.png "Widget Activity"
