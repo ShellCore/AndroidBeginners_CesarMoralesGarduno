@@ -2,14 +2,14 @@
     <string name="app_name">Flash Study</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_question_detail">QuestionDetailActivity</string>
-    <string name="dialog.hint.add_question">Pregunta</string>
-    <string name="dialog.hint.answer">Respuesta</string>
-    <string name="dialog.title">Agregar nueva pregunta</string>
-    <string name="processDialog_wait">Leyendo datos del archivo json...</string>
-    <string name="reminder_message">Recuerda que las tarjetas que agregaste tienen que ser estudiadas (^o^)//</string>
-    <string name="reminder_short_message">Hora de estudiar!</string>
+    <string name="dialog.hint.add_question">Question</string>
+    <string name="dialog.hint.answer">Answer</string>
+    <string name="dialog.title">Add new Question</string>
+    <string name="processDialog_wait">Loading data from json file...</string>
+    <string name="reminder_message">Remember to study your cards who you added recently (^o^)//</string>
+    <string name="reminder_short_message">Time to study!</string>
     <string name="main.menu.action_about_me">About me</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="remember_to_study">Remember to study</string>
+    <string name="reminder">Reminder</string>
+    <string name="frecuency">Frecuency</string>
 </resources>

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Recordatorios">
+    <PreferenceCategory android:title="@string/reminder">
         <SwitchPreference
             android:defaultValue="true"
             android:key="remember"
-            android:title="Recuérdame estudiar" />
+            android:title="@string/remember_to_study" />
         <ListPreference
             android:defaultValue="120000"
             android:entries="@array/frecuency"
             android:entryValues="@array/frecuency_value"
             android:key="frecuency"
             android:summary="%s"
-            android:title="Frecuencia" />
+            android:title="@string/frecuency" />
     </PreferenceCategory>
 </PreferenceScreen>
