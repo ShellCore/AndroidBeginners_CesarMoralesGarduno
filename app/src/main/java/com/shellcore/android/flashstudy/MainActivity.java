@@ -17,6 +17,7 @@ import com.shellcore.android.flashstudy.dao.QuestionDao;
 import com.shellcore.android.flashstudy.dialog.AddQuestionDialogFragment;
 import com.shellcore.android.flashstudy.jobs.RecordatoryJobService;
 import com.shellcore.android.flashstudy.model.Question;
+import com.shellcore.android.flashstudy.task.LoadQuestionTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +74,8 @@ public class MainActivity extends AppCompatActivity implements AddQuestionDialog
         JobInfo jobInfo =  new JobInfo.Builder(JOB_ID, jobService)
                 .setPeriodic(180000) // 2 minutes
                 .build();
-        jobScheduler.schedule(jobInfo);
+        // TODO Descomentar cuando se suba el código
+//        jobScheduler.schedule(jobInfo);
     }
 
     private void loadQuestionsForJson() {

@@ -9,4 +9,9 @@
 
     <color name="colorCardQuestion">#FF4081</color>
     <color name="colorCardAnswer">@android:color/white</color>
+
+    // Colores del widget
+    <color name="colorPrimaryTransparent">#AA76C2AF</color>
+    <color name="colorBackgroundTransparent">#AAFFFFFF</color>
+
 </resources>

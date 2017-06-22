@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundTransparent"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:lines="2"
+            android:background="@color/colorPrimaryTransparent"
+            android:id="@+id/txt_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:textColor="@android:color/black"
+            android:background="@color/colorBackgroundTransparent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:id="@+id/txt_answer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:lines="4"
+            android:text="Answer" />
+    </LinearLayout>
+
+    <Button
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="@android:color/white"
+        android:id="@+id/btn_random"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="Random" />
+
+</LinearLayout>

@@ -1,10 +1,11 @@
-package com.shellcore.android.flashstudy;
+package com.shellcore.android.flashstudy.task;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
 import com.google.gson.Gson;
+import com.shellcore.android.flashstudy.R;
 import com.shellcore.android.flashstudy.model.Question;
 
 import java.util.ArrayList;
