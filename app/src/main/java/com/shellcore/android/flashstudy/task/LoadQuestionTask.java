@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static com.shellcore.android.flashstudy.JsonLoader.loadJsonFromAsset;
+import static com.shellcore.android.flashstudy.json.JsonLoader.loadJsonFromAsset;
 
 /**
  * Created by Cesar on 21/06/2017.

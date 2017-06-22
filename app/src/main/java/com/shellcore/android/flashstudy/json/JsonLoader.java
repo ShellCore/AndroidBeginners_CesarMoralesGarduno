@@ -1,4 +1,4 @@
-package com.shellcore.android.flashstudy;
+package com.shellcore.android.flashstudy.json;
 
 import android.content.ContentValues;
 import android.content.Context;

@@ -1,9 +1,6 @@
 package com.shellcore.android.flashstudy;
 
-import android.app.job.JobInfo;
-import android.app.job.JobScheduler;
-import android.content.ComponentName;
-import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,12 +9,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.shellcore.android.flashstudy.adapter.QuestionListAdapter;
-import com.shellcore.android.flashstudy.dao.QuestionDao;
-import com.shellcore.android.flashstudy.dialog.AddQuestionDialogFragment;
-import com.shellcore.android.flashstudy.jobs.RecordatoryJobService;
+import com.shellcore.android.flashstudy.data.dao.QuestionDao;
 import com.shellcore.android.flashstudy.model.Question;
+import com.shellcore.android.flashstudy.service.ReminderService;
 import com.shellcore.android.flashstudy.task.LoadQuestionTask;
+import com.shellcore.android.flashstudy.ui.activity.AboutMeActivity;
+import com.shellcore.android.flashstudy.ui.activity.PreferenceActivity;
+import com.shellcore.android.flashstudy.ui.adapter.QuestionListAdapter;
+import com.shellcore.android.flashstudy.ui.dialog.AddQuestionDialogFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,9 +26,6 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements AddQuestionDialogFragment.ToggleAddQuestionListener, LoadQuestionTask.ToggleLoadQuestionListener {
-
-    // Constantes
-    private static final int JOB_ID = 1010;
 
     // Servicios
     private QuestionListAdapter adapter;
@@ -69,13 +65,7 @@ public class MainActivity extends AppCompatActivity implements AddQuestionDialog
     }
 
     private void setupReminder() {
-        JobScheduler jobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
-        ComponentName jobService =  new ComponentName(getPackageName(), RecordatoryJobService.class.getName());
-        JobInfo jobInfo =  new JobInfo.Builder(JOB_ID, jobService)
-                .setPeriodic(180000) // 2 minutes
-                .build();
-        // TODO Descomentar cuando se suba el código
-//        jobScheduler.schedule(jobInfo);
+        ReminderService.setupReminder(this);
     }
 
     private void loadQuestionsForJson() {
@@ -104,12 +94,18 @@ public class MainActivity extends AppCompatActivity implements AddQuestionDialog
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+
+        switch (id) {
+            case R.id.action_settings:
+                startActivity(new Intent(this, PreferenceActivity.class));
+                break;
+            case R.id.action_about_me:
+                startActivity(new Intent(this, AboutMeActivity.class));
+                break;
         }
+
         return super.onOptionsItemSelected(item);
     }
-
 
     @OnClick(R.id.fab)
     public void addQuestion() {

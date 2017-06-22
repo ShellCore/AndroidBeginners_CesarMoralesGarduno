@@ -1,4 +1,4 @@
-package com.shellcore.android.flashstudy.adapter;
+package com.shellcore.android.flashstudy.ui.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.shellcore.android.flashstudy.R;
-import com.shellcore.android.flashstudy.activity.QuestionDetailActivity;
 import com.shellcore.android.flashstudy.model.Question;
+import com.shellcore.android.flashstudy.ui.activity.QuestionDetailActivity;
 
 import java.util.List;
 

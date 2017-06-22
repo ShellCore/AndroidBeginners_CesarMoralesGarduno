@@ -1,4 +1,4 @@
-package com.shellcore.android.flashstudy.dao;
+package com.shellcore.android.flashstudy.data.dao;
 
 import android.content.ContentValues;
 import android.content.Context;

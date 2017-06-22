@@ -1,4 +1,4 @@
-package com.shellcore.android.flashstudy.activity;
+package com.shellcore.android.flashstudy.ui.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

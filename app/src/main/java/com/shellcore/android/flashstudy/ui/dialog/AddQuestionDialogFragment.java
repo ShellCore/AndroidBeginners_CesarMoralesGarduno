@@ -1,4 +1,4 @@
-package com.shellcore.android.flashstudy.dialog;
+package com.shellcore.android.flashstudy.ui.dialog;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.shellcore.android.flashstudy.R;
-import com.shellcore.android.flashstudy.dao.QuestionDao;
+import com.shellcore.android.flashstudy.data.dao.QuestionDao;
 import com.shellcore.android.flashstudy.model.Question;
 
 /**

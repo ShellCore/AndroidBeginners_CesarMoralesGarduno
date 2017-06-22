@@ -1,4 +1,4 @@
-package com.shellcore.android.flashstudy.widgets;
+package com.shellcore.android.flashstudy.ui.widgets;
 
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
@@ -8,10 +8,9 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 import com.shellcore.android.flashstudy.R;
-import com.shellcore.android.flashstudy.dao.QuestionDao;
+import com.shellcore.android.flashstudy.data.dao.QuestionDao;
 import com.shellcore.android.flashstudy.model.Question;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
