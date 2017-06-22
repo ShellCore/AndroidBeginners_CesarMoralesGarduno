@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#76C2AF</color>
+    <color name="colorPrimaryDark">#499f8a</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorBackground">#DDD</color>
+
+    <color name="colorCard">@android:color/white</color>
+
+    <color name="colorCardQuestion">#FF4081</color>
+    <color name="colorCardAnswer">@android:color/white</color>
+
+    // Colores del widget
+    <color name="colorPrimaryTransparent">#AA76C2AF</color>
+    <color name="colorBackgroundTransparent">#AAFFFFFF</color>
+
 </resources>

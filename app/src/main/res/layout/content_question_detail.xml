@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/colorBackground"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.activity.QuestionDetailActivity"
+    tools:showIn="@layout/activity_question_detail">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standar_margin"
+        android:layout_marginEnd="@dimen/standar_margin"
+        android:backgroundTint="@color/colorCardQuestion">
+
+        <TextView
+            android:id="@+id/txt_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standar_margin"
+            android:lines="2"
+            android:gravity="center"
+            android:text="Question"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standar_margin"
+        android:layout_marginEnd="@dimen/standar_margin"
+        android:backgroundTint="@color/colorCardAnswer">
+
+        <TextView
+            android:id="@+id/txt_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/standar_margin"
+            android:gravity="center"
+            android:lines="5"
+            android:text="Answer"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

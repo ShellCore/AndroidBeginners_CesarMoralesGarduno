@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Suppose we have a project called “MyProject”, where is the path for the string file resources?",
+    "answer"  : "MyProject/res/values/string.xml"
+  },
+  {
+    "question": "What is the advantage to declare the UI on an .XML?",
+    "answer"  : "It separate the presentation of the application from the code that controls it behaviour"
+  },
+  {
+    "question": "What is a Service",
+    "answer"  : "Is an application component that can perform long-running operations in the background"
+  },
+  {
+    "question": "What changes you need to implement on your application to support different languages?",
+    "answer"  : "Create a new String file and add the necessary strings"
+  },
+  {
+    "question": "Which is one of the fundamental uses of Intents?",
+    "answer"  : "Start an Activity"
+  }
+]
