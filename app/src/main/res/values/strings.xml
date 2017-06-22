@@ -6,4 +6,6 @@
     <string name="dialog.hint.answer">Respuesta</string>
     <string name="dialog.title">Agregar nueva pregunta</string>
     <string name="processDialog_wait">Leyendo datos del archivo json...</string>
+    <string name="reminder_message">Recuerda que las tarjetas que agregaste tienen que ser estudiadas (^o^)//</string>
+    <string name="reminder_short_message">Hora de estudiar!</string>
 </resources>

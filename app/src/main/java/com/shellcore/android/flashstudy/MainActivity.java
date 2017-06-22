@@ -1,5 +1,9 @@
 package com.shellcore.android.flashstudy;
 
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +15,7 @@ import android.view.MenuItem;
 import com.shellcore.android.flashstudy.adapter.QuestionListAdapter;
 import com.shellcore.android.flashstudy.dao.QuestionDao;
 import com.shellcore.android.flashstudy.dialog.AddQuestionDialogFragment;
+import com.shellcore.android.flashstudy.jobs.RecordatoryJobService;
 import com.shellcore.android.flashstudy.model.Question;
 
 import java.util.ArrayList;
@@ -21,6 +26,9 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity implements AddQuestionDialogFragment.ToggleAddQuestionListener, LoadQuestionTask.ToggleLoadQuestionListener {
+
+    // Constantes
+    private static final int JOB_ID = 1010;
 
     // Servicios
     private QuestionListAdapter adapter;
@@ -55,7 +63,17 @@ public class MainActivity extends AppCompatActivity implements AddQuestionDialog
         adapter = new QuestionListAdapter(this, questions);
 
         loadQuestionsForJson();
+        setupReminder();
 //        loadQuestionsForDB();
+    }
+
+    private void setupReminder() {
+        JobScheduler jobScheduler = (JobScheduler) getSystemService(Context.JOB_SCHEDULER_SERVICE);
+        ComponentName jobService =  new ComponentName(getPackageName(), RecordatoryJobService.class.getName());
+        JobInfo jobInfo =  new JobInfo.Builder(JOB_ID, jobService)
+                .setPeriodic(180000) // 2 minutes
+                .build();
+        jobScheduler.schedule(jobInfo);
     }
 
     private void loadQuestionsForJson() {
