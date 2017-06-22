@@ -52,16 +52,11 @@ public class MainActivity extends AppCompatActivity implements AddQuestionDialog
     }
 
     private void initializeData() {
-        /**
-         * TODO Si no existe información en base de datos, leer desde el archivo. En caso contrario,
-         * se deberá leer desde el archivo Json.
-         */
         questions = new ArrayList<>();
         adapter = new QuestionListAdapter(this, questions);
 
         loadQuestionsForJson();
         setupReminder();
-//        loadQuestionsForDB();
     }
 
     private void setupReminder() {

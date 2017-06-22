@@ -11,7 +11,6 @@ public class PreferenceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_preference);
 
         getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new OptionsFragment())

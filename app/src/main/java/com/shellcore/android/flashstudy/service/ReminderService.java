@@ -31,7 +31,7 @@ public class ReminderService {
 
             ComponentName jobService = new ComponentName(context.getPackageName(), RecordatoryJobService.class.getName());
             JobInfo jobInfo = new JobInfo.Builder(JOB_ID, jobService)
-                    .setPeriodic(periodicity) // 2 minutes
+                    .setPeriodic(periodicity)
                     .build();
             jobScheduler.schedule(jobInfo);
         }

@@ -24,11 +24,9 @@ public class RandomQuestionWidgetProvider extends AppWidgetProvider {
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
         final int N = appWidgetIds.length;
 
-        // Perform this loop procedure for each App Widget that belongs to this provider
         for (int i = 0; i < N; i++) {
             int appWidgetId = appWidgetIds[i];
 
-            // Get the layout for the App Widget and attach the onClick listener
             RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
 
             Question question = getRandomName(context);
@@ -36,7 +34,6 @@ public class RandomQuestionWidgetProvider extends AppWidgetProvider {
             views.setTextViewText(R.id.txt_question, question.getQuestion());
             views.setTextViewText(R.id.txt_answer, question.getAnswer());
 
-            // Create an Intent to update Widget
             Intent intent = new Intent(context, RandomQuestionWidgetProvider.class);
             intent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
@@ -48,10 +45,6 @@ public class RandomQuestionWidgetProvider extends AppWidgetProvider {
         }
     }
 
-    /**
-     * We are faking data, but this method should be a call to a ContentProvider or Database to get real data
-     * @return
-     */
     private Question getRandomName(Context context) {
         List<Question> questions = QuestionDao.getQuestionList(context);
 
