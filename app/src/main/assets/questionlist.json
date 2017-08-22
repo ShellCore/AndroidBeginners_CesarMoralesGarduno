@@ -1,22 +1,474 @@
 [
   {
-    "question": "Suppose we have a project called “MyProject”, where is the path for the string file resources?",
-    "answer"  : "MyProject/res/values/string.xml"
+    "question": "Allows write declarative layouts that minimizes the necessary code in your application logic to connect to the user interface elements?",
+    "answer": "Data Binding"
   },
   {
-    "question": "What is the advantage to declare the UI on an .XML?",
-    "answer"  : "It separate the presentation of the application from the code that controls it behaviour"
+    "question": "Firebase must be configured in Application class inside the method:",
+    "answer": "onCreate()"
   },
   {
-    "question": "What is a Service",
-    "answer"  : "Is an application component that can perform long-running operations in the background"
+    "question": "How many layers of abstraction gives MVP to a project?",
+    "answer": "3"
   },
   {
-    "question": "What changes you need to implement on your application to support different languages?",
-    "answer"  : "Create a new String file and add the necessary strings"
+    "question": "If the domain of my website is es android.galileo.edu ¿What should be the package of my app?",
+    "answer": "edu.galileo.android"
   },
   {
-    "question": "Which is one of the fundamental uses of Intents?",
-    "answer"  : "Start an Activity"
+    "question": "In MVP architecture, what is the layer that communicates directly with the Presenter?",
+    "answer": "View and Model"
+  },
+  {
+    "question": "In MVP architecture, what is the layer that communicates directly with the View?",
+    "answer": "Presenter"
+  },
+  {
+    "question": "In MVP architecture, what is the layer that should handle the logic business?",
+    "answer": "Model"
+  },
+  {
+    "question": "Link between the View and Model, dealing with any view logic?",
+    "answer": "ViewModel"
+  },
+  {
+    "question": "Method where the actual binding of the ViewModel and View takes place?",
+    "answer": "onBindViewHolder()"
+  },
+  {
+    "question": "On a Java interface we can:",
+    "answer": "Declare properties and methods"
+  },
+  {
+    "question": "Retrofit allow us to send request:",
+    "answer": "Synchronous and Asynchronous"
+  },
+  {
+    "question": "Retrofit helps us to:",
+    "answer": "Convert and HTTP API into a Java interface and do requests easily"
+  },
+  {
+    "question": "The ViewModel is responsible for wrapping the model and preparing observable data needed by the view?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Unit testing is easier using MVVM, because you really have no dependency on the view, you only need to verify that the observable variables are set appropriately when the model changes?",
+    "answer": "Yes"
+  },
+  {
+    "question": "What class do we have to extend if we want to be able to use a Toolbar?",
+    "answer": "AppCompatActivity"
+  },
+  {
+    "question": "What element can help us to implement a parallax effect in our Android app?",
+    "answer": "CoordinatorLayout"
+  },
+  {
+    "question": "What instruction is correct to load an image from a URL into an ImageView using Glide?",
+    "answer": "Glide.with(context).load(URL).into(imageView);"
+  },
+  {
+    "question": "What is it android: orientation for inside and LinearLayout?",
+    "answer": "To display the elements horizontally or vertically"
+  },
+  {
+    "question": "What is it EventBus for?",
+    "answer": "To send event that allow us to communicate between different layers in our app architecture"
+  },
+  {
+    "question": "What is it Glide library for?",
+    "answer": "To handle and download images in an easier way"
+  },
+  {
+    "question": "What is the Android widget element that is suggested to use instead of Toast?",
+    "answer": "Snackbar"
+  },
+  {
+    "question": "What is the element that surrounds an TextInputLayout?",
+    "answer": "EditText"
+  },
+  {
+    "question": "What is the EventBus instruction that needs to be called in onStart() method?",
+    "answer": "EventBus.getDefault().register(object);"
+  },
+  {
+    "question": "What is the file where you should put the string values that are displayed on the UI of the app?",
+    "answer": "strings.xml"
+  },
+  {
+    "question": "What method should we write to listen SuccessEvent using EventBus?",
+    "answer": "public void onSuccessEvent(SuccessEvent event)"
+  },
+  {
+    "question": "When we use MVP and Clean together, what layer should be in charge of the visual elements?",
+    "answer": "View"
+  },
+  {
+    "question": "When we use MVP and Clean together, what layer should handle the communication with the data services?",
+    "answer": "Repository"
+  },
+  {
+    "question": "Which is the library to add support to material design elements?",
+    "answer": "compile ‘com.android.support:design:23.1.1’"
+  },
+  {
+    "question": "Why is it important to define an architecture when we are developing a software?",
+    "answer": "- To allow the software to be maintainable through the time\n- It makes the software scalable\n- It helps the software to be more testable and also helps the quality assurance of it"
+  },
+  {
+    "question": "All @Provides methods must belong to a module?",
+    "answer": "Yes"
+  },
+  {
+    "question": "Annotation used on Dagger that help to create instances of a class",
+    "answer": "@Inject"
+  },
+  {
+    "question": "Can you use @Inject to annotate the constructor and @Inject to annotate fields directly at the same time?",
+    "answer": "Yes"
+  },
+  {
+    "question": "How can we add the Login button to our App?",
+    "answer": "Using the widget that Fabric provides com.twitter.sdk.android.core.identity.TwitterLoginButton"
+  },
+  {
+    "question": "How do we get the username when we do a successful login with Twitter API:",
+    "answer": "Twitter.getSessionManager().getActiveSession().getUserName()"
+  },
+  {
+    "question": "In Dagger 2 the dependency injection happens in:",
+    "answer": "Compile time"
+  },
+  {
+    "question": "In Dagger 2 what is the purpose of a Module?",
+    "answer": "Expose the way a dependency is injected"
+  },
+  {
+    "question": "In Dagger 2, if our component is named ImagesComponent, what is the name of the generated class by Dagger?",
+    "answer": "Dagger Images Component"
+  },
+  {
+    "question": "Injector class used in Dagger 2 that assigns references in our activities, services, or fragments to have access to singletons we earlier defined.",
+    "answer": "Component"
+  },
+  {
+    "question": "Observe the following method:\n@Named(\"hi\")\n@Provides\ntring provideHi() {\nreturn \"Hello!\";\n}\nWhat meaning has this method?",
+    "answer": "Are you providing \"Hello!\" through a module"
+  },
+  {
+    "question": "Observe the following method: What meaning has this method?",
+    "answer": "Are you providing \"Hello!\" through a module"
+  },
+  {
+    "question": "To extend the API that Fabric provides using Retrofit we need to define:",
+    "answer": "A client and a service"
+  },
+  {
+    "question": "What do we need to add to the onCreate() method in an activity where we want to inject an extra argument using Dart?",
+    "answer": "Dart.inject(context)"
+  },
+  {
+    "question": "When we use Dart 2 the Henson module provides us a builder to create:",
+    "answer": "An Intent"
+  },
+  {
+    "question": "Where do you create a specific instance of a dependency in Dagger 2?",
+    "answer": "In the Module"
+  },
+  {
+    "question": "Which annotation provides Dart to bind an activity field to an intent extra?",
+    "answer": "@InjectExtra"
+  },
+  {
+    "question": "Which are the methods that need to be cofigured on the TwitterLoginButton callback?",
+    "answer": "success and failure"
+  },
+  {
+    "question": "Which is the Android element that allow us to have several pages where we can switch between them using the swipe gesture?",
+    "answer": "ViewPager"
+  },
+  {
+    "question": "Which is the Android element that allows us to add Tabs in our App?",
+    "answer": "TabLayout"
+  },
+  {
+    "question": "Which is the Android element that allows us to have several pages where we can switch between them using the swipe gesture?",
+    "answer": "ViewPager"
+  },
+  {
+    "question": "Which is the annotation we use to inject dependencies inside a class with Dagger 2 ?",
+    "answer": "@Inject"
+  },
+  {
+    "question": "Which is the annotation we use to inject dependencies inside a class with Dagger 2?",
+    "answer": "@Inject"
+  },
+  {
+    "question": "Which is the Dagger 2 annotation that we use to inject a different instance of the same object type?",
+    "answer": "@Named"
+  },
+  {
+    "question": "Which is the Dagger Annotation that helps us to provide a specific dependency from a module?",
+    "answer": "@Provides"
+  },
+  {
+    "question": "Which is the method we need to override to inflate the view of a menu when we want to add it to an Activity?",
+    "answer": "onCreateOptionsMenu"
+  },
+  {
+    "question": "Which is the Twitter kit we can use to develop mobile apps and interact with its API?",
+    "answer": "Fabric"
+  },
+  {
+    "question": "Which of the next statements is NOT an advantage of using dependency injection:",
+    "answer": "It is easier to create a Singleton"
+  },
+  {
+    "question": "Why is important to add an ‘envelop’ to our libraries in Java classes to execute the actions we need from them?",
+    "answer": "Because it is a good practice that could make easier replacing the library in the future if we need it"
+  },
+  {
+    "question": "Can you use Retrofit2 for make synchronous or asynchronous HTTP request to the remote web server?",
+    "answer": "Yes"
+  },
+  {
+    "question": "If we want to display a menu element in the toolbar as an individual icon, what is the xml property we need to configure?",
+    "answer": "app:showAsAction=”always”"
+  },
+  {
+    "question": "Is not an external converter library that can you use with Retrofit2 for serialization and deserialization",
+    "answer": "Robolectric"
+  },
+  {
+    "question": "Retrofit 2 allows us to define our API as a:",
+    "answer": "Java interface"
+  },
+  {
+    "question": "To use Retrofit 2 we need to implement two layers, what layers are those?",
+    "answer": "A service and a client"
+  },
+  {
+    "question": "What do we need to do every time we update a table that is being handled by DBFlow?",
+    "answer": "Increment the database version number"
+  },
+  {
+    "question": "What is DBFlow?",
+    "answer": "An ORM"
+  },
+  {
+    "question": "What is Realm?",
+    "answer": "A database"
+  },
+  {
+    "question": "What is the class we need to inherit on the class where we want to capture swipe gestures?",
+    "answer": "GestureDetector.SimpleOnGestureListener"
+  },
+  {
+    "question": "What is the database that DBFlow is able to handle?",
+    "answer": "SQLite"
+  },
+  {
+    "question": "What is the DBFlow annotation that defines a primary key on a table?",
+    "answer": "@PrimaryKey"
+  },
+  {
+    "question": "What is the DBFlow annotation that we need to use to define the properties of a database?",
+    "answer": "@Database"
+  },
+  {
+    "question": "What is the method we need to override to inflate a menu?",
+    "answer": "onCreateOptionsMenu"
+  },
+  {
+    "question": "What is the method where we ask for the permission to publish when we do Login using Facebook?",
+    "answer": "We need to configure setPublishPermissions on the Login button"
+  },
+  {
+    "question": "What is the Realm instruction you need to call to start using Realm?",
+    "answer": "Realm.init(context)"
+  },
+  {
+    "question": "What is the widget that Facebook SDK provides us to instert a button to Login with a Facebook account?",
+    "answer": "com.facebook.login.widget.LoginButton"
+  },
+  {
+    "question": "What type of calls Retrofit allows us:",
+    "answer": "Synchronous and Asynchronous"
+  },
+  {
+    "question": "When we use Retrofit, where should we configure our base API URL?",
+    "answer": "In the class representing the Client"
+  },
+  {
+    "question": "Which is the Retrofit method that we use when we want to do an asynchronous call?",
+    "answer": "enqueue"
+  },
+  {
+    "question": "Which is the widget that Facebook SDK provides us to insert a button that allows us to share content with the Facebook App?",
+    "answer": "com.facebook.share.widget.ShareButton"
+  },
+  {
+    "question": "Which is the widget that Facebook SDK provides us to insert a button that allows us to share content with the Facebook Messenger App?",
+    "answer": "com.facebook.share.widget.SendButton"
+  },
+  {
+    "question": "Which xml property of the ImageView we use to indicate the image we want to display?",
+    "answer": "android:src"
+  },
+  {
+    "question": "Why is necessary add a converter when you are creating a new Retrofit object?\n\nRetrofit retrofit = new Retrofit.Builder()\n.baseUrl(\"https://api.github.com\")\n.addConverterFactory(GsonConverterFactory.create())\n.build();\n",
+    "answer": "Helps to convert a JSON string to an equivalent Java object and vice-versa"
+  },
+  {
+    "question": "Class which is used as main entry point for Google Play services integration?",
+    "answer": "GoogleApiClient"
+  },
+  {
+    "question": "Class which is used for transforming a street address or other description of a location into a latitude and longitude coordinates?",
+    "answer": "android.location.Geocoder"
+  },
+  {
+    "question": "For mapping applications that are showing location in real-time you should set the priority with the following constant and with interval setting?",
+    "answer": "PRIORITY_HIGH_ACCURACY and setInterval() to 5 seconds."
+  },
+  {
+    "question": "In what method can we access to the location information when the service is ready?",
+    "answer": "onConnected"
+  },
+  {
+    "question": "In what method do we obtain the result of the image that was took using the device camera?",
+    "answer": "onActivityResult"
+  },
+  {
+    "question": "In which method is important that we do all the logic related to the Map?",
+    "answer": "onMapReady"
+  },
+  {
+    "question": "List addresses = geocoder.getFromLocation(mLastLocation.getLatitude(),\n         mLastLocation.getLongitude(), 1);\naddresses.get(0).getAdminArea();\n\nAt the above code, what returns getAdminArea()?\n",
+    "answer": "It returns the state name from location"
+  },
+  {
+    "question": "Using what method should we start the activity intent when we want to open the camera so we can later get the image the user took with it?",
+    "answer": "startActivityFromResult"
+  },
+  {
+    "question": "What class represents a each marker object that we add to a Map?",
+    "answer": "Marker"
+  },
+  {
+    "question": "What is the Intent that we need to make use of the device camera?",
+    "answer": "new Intent(MediaStore.ACTION_IMAGE_CAPTURE)"
+  },
+  {
+    "question": "What is the Intent that we use to share an image that Android provides by default?",
+    "answer": "Intent.ACTION_SEND"
+  },
+  {
+    "question": "What is the key we need to provide in the Google API console to generate our Maps API key?",
+    "answer": "SHA-1"
+  },
+  {
+    "question": "What is the required field we need to configure if we want to create and add a marker to our map?",
+    "answer": "Location"
+  },
+  {
+    "question": "What of the next options is NOT a flag that we use to clean the navigation history of our activities?",
+    "answer": "Intent.FLAG_CLEAR_HISTORY"
+  },
+  {
+    "question": "What permission do we need to ask to make use of google maps and save images in our application?",
+    "answer": "- ACCESS_FINE_LOCATION y ACCESS_COARSE_LOCATION\n- INTERNET y ACCESS_NETWORK_STATE\n- WRITE_EXTERNAL_STORAGE"
+  },
+  {
+    "question": "What permission do we need to verify if we can save our pictures after taking a photo with the camera?",
+    "answer": "WRITE_EXTERNAL_STORAGE y SAVE_EXTERNAL_IMAGES"
+  },
+  {
+    "question": "Which are the two permissions we need to ask to be able to get the location services from our app?",
+    "answer": "ACCESS_FINE_LOCATION y ACCESS_COARSE_LOCATION"
+  },
+  {
+    "question": "Which interface we must implement to obtain the location services on our activity?",
+    "answer": "GoogleApiClient.ConnectionCallbacks and GoogleApiClient.OnConnectionFailedListener"
+  },
+  {
+    "question": "Which is the class that Android provides us to execute and control an instruction on a different Thread than the UI Thread?",
+    "answer": "AsyncTask"
+  },
+  {
+    "question": "Which is the class we use to create our object to configure the access to location services?",
+    "answer": "GoogleApiClient"
+  },
+  {
+    "question": "Which is the feature we need to indicate in the Manifest file when the app requires access to the camera?",
+    "answer": "android.hardware.camera"
+  },
+  {
+    "question": "Which is the SDK library that we need to use in our project to interact with the geo location of the user from our application?",
+    "answer": "PlayServices"
+  },
+  {
+    "question": "Why we shouldn’t try to use Firebase Database to save images on the cloud?",
+    "answer": "Because this database only saves text, we should use firebase cloud storage instead"
+  },
+  {
+    "question": "For what can we use Robolectric?",
+    "answer": "It allows us to emulate Android Components inside our unit tests"
+  },
+  {
+    "question": "How are the unit tests recommended?",
+    "answer": "Small\nA lot of unit tests\nQuick"
+  },
+  {
+    "question": "The verify method of Mockito, what kind of object receives as parameter?",
+    "answer": "A mock"
+  },
+  {
+    "question": "What are the Black Box tests?",
+    "answer": "Those test where we don’t know the internal functionality, generally acceptance tests"
+  },
+  {
+    "question": "What are the White Box tests?",
+    "answer": "The tests where we know the internal functionality, for example the architecture of the app"
+  },
+  {
+    "question": "What Code Coverage level is recommended on an Android App?",
+    "answer": "It is recommended that the developers define a level to reach depending on the security needed on the project"
+  },
+  {
+    "question": "What is JUnit?",
+    "answer": "It’s a framework that allows us to execute unit tests in our Java Code"
+  },
+  {
+    "question": "What is the annotations that need to be added over a class to allow a test run using Robolectric?",
+    "answer": "@RunWith"
+  },
+  {
+    "question": "What is the anotation that we add in JUnit that allows us to execute something before every test that we develop?",
+    "answer": "@Before"
+  },
+  {
+    "question": "What is the correct way to add a dependency to use Robolectric in our buildle.gradle?",
+    "answer": "testCompile \"org.robolectric:robolectric:3.0\""
+  },
+  {
+    "question": "What is the corrrect method that allows us to provide Mockito to verify that inside our code a method was called?",
+    "answer": "verify"
+  },
+  {
+    "question": "What is the reason because it is recommended to add unit tests to our code?",
+    "answer": "To ensure that our code works properly when we do changes"
+  },
+  {
+    "question": "What is the Robolectric annotation that we use to configure the SDK that we use in our tests?",
+    "answer": "@Config"
+  },
+  {
+    "question": "What is the Robolectric annotation to definy a class that we want to create a Shadow?",
+    "answer": "@Implements"
+  },
+  {
+    "question": "What is the way can we use Mockito to create a Mock on a variable way on a unit test?",
+    "answer": "Add @Mock annotations"
   }
 ]
